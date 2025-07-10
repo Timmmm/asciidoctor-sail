@@ -12,7 +12,7 @@ module Asciidoctor
 
         raise "Sail Asciidoc plugin: File #{sourcemap_path} does not exist" unless File.exist?(sourcemap_path)
 
-        file = File.read(sourcemap_path)
+        file = File.read(sourcemap_path, encoding: 'UTF-8')
         @sources[key] = JSON.parse(file)
       end
 
